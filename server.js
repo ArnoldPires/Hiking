@@ -4,11 +4,9 @@ const MongoClient = require("mongodb").MongoClient;
 const PORT = 8000;
 require("dotenv").config();
 
-app.use(cors());
-
 let db,
   dbConnectionStr = process.env.DB_STRING,
-  dbName = "ClusterHiking";
+  dbName = "Hiking";
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
   (client) => {
@@ -23,9 +21,65 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (request, response) => {
-  response.sendFile(__dirname + "views/index.ejs");
+  db.collection("hikingSpots")
+    .find()
+    .sort({ likes: -1 })
+    .toArray()
+    .then((data) => {
+      response.render("index.ejs", { info: data });
+    })
+    .catch((error) => console.error(error));
+});
+
+app.post("/addHike", (request, response) => {
+  db.collection("hikingSpots")
+    .insertOne({
+      hikingName: request.body.hikingName,
+      area: request.body.area,
+      likes: 0,
+    })
+    .then((result) => {
+      console.log("Hike Added");
+      response.redirect("/");
+    })
+    .catch((error) => console.error(error));
+});
+
+app.put("/addOneLike", (request, response) => {
+  db.collection("hikingSpots")
+    .updateOne(
+      {
+        hikingName: request.body.hikingNameS,
+        area: request.body.areaS,
+        likes: request.body.likesS,
+      },
+      {
+        $set: {
+          likes: request.body.likesS + 1,
+        },
+      },
+      {
+        sort: { _id: -1 },
+        upsert: true,
+      }
+    )
+    .then((result) => {
+      console.log("Added One Like");
+      response.json("Like Added");
+    })
+    .catch((error) => console.error(error));
+});
+
+app.delete("/deleteHike", (request, response) => {
+  db.collection("hikingSpots")
+    .deleteOne({ hikingName: request.body.hikingNameS })
+    .then((result) => {
+      console.log("Hike Deleted");
+      response.json("Hike Deleted");
+    })
+    .catch((error) => console.error(error));
 });
 
 app.listen(process.env.PORT || PORT, () => {
-  console.log(`server is running on port ${PORT}`);
-}); 
+  console.log(`Server running on port ${PORT}`);
+});
