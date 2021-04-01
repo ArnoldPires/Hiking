@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +10,37 @@
     <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Welcome to Boston Hiking!</h1>
+    </header>
+    <section>
+        <div class="EnterHikingSpot">
+            <p>Enter a hiking spot you want me to add next:</p>
+        <form action="/addItem" method="POST">
+            <input type="text" name="todo">
+            <button type="submit">Add</button>
+        </form>
+            <ul class="chores">
+                <% for(let i=0; i < info.length; i++) {%>
+                    <li class="chore">
+                        <span>
+                            <%= info[i].todo %>
+                        </span>
+                        <span class='del'>delete</span>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+    </section>
+    <section>
+        <div class="hikingSelections">
+            <p>Please select one of the recommended hiking spots below to learn more about them</p>
+            <button>Boston Harbor Path</button>
+            <button>Melnea Cass Bike Path</button>
+            <button>Downtown Boston Kids Walk</button>
+            <button>Franklin Park</button>
+        </div>
+    </section>
 </body>
-<script type="text/javascript" src="../server.js"></script>
 <script type="text/javascript" src="../public/main.js"></script>
 </html>
