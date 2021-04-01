@@ -1,13 +1,12 @@
 const express = require("express");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
-const PORT = 3000;
-const uri = process.env.MONGODB_URI;
+const PORT = 8000;
+require("dotenv").config();
 
 let db,
-  dbConnectionStr =
-    "mongodb+srv://arnaldo:HfFxTWP91Zc4fugt@clusterhiking.g3zd7.mongodb.net/Hiking?retryWrites=true&w=majority",
-  dbName = "todoList";
+  dbConnectionStr = process.env.DB_STRING,
+  dbName = "Hiking";
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
   (client) => {
@@ -16,41 +15,69 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
   }
 );
 
-app.set("view-engine", "ejs");
+app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (request, response) => {
-  db.collection("chores")
+  db.collection("hikingSpots")
     .find()
+    .sort({ likes: -1 })
     .toArray()
     .then((data) => {
       response.render("index.ejs", { info: data });
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.error(error));
 });
 
-app.post("/addItem", (request, response) => {
-  db.collection("chores")
-    .insertOne(request.body)
+app.post("/addHike", (request, response) => {
+  db.collection("hikingSpots")
+    .insertOne({
+      hikingName: request.body.hikingName,
+      area: request.body.area,
+      likes: 0,
+    })
     .then((result) => {
-      console.log("Added Item");
+      console.log("Hike Added");
       response.redirect("/");
     })
-    .catch((error) => {
-      console.log(error);
-    });
+    .catch((error) => console.error(error));
 });
 
-app.delete("/deleteItem", (request, response) => {
-  db.collection("chores")
-    .deleteOne({ todo: request.body.todoX })
+app.put("/addOneLike", (request, response) => {
+  db.collection("hikingSpots")
+    .updateOne(
+      {
+        hikingName: request.body.hikingNameS,
+        area: request.body.areaS,
+        likes: request.body.likesS,
+      },
+      {
+        $set: {
+          likes: request.body.likesS + 1,
+        },
+      },
+      {
+        sort: { _id: -1 },
+        upsert: true,
+      }
+    )
     .then((result) => {
-      console.log("Deleted Item");
-      response.json("Deleted Item");
+      console.log("Added One Like");
+      response.json("Like Added");
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.error(error));
+});
+
+app.delete("/deleteHike", (request, response) => {
+  db.collection("hikingSpots")
+    .deleteOne({ hikingName: request.body.hikingNameS })
+    .then((result) => {
+      console.log("Hike Deleted");
+      response.json("Hike Deleted");
+    })
+    .catch((error) => console.error(error));
 });
 
 app.listen(process.env.PORT || PORT, () => {
