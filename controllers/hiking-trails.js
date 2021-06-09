@@ -31,6 +31,8 @@ module.exports = {
               routeType: req.body.routeType,
               location: req.body.location,
               description: req.body.description,
+              suitability: req.body.suitability,
+              attractions: req.body.attractions,
               user: req.user
           })
           res.redirect(`/hiking-trails/${trail._id}`)
