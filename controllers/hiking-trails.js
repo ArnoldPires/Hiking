@@ -1,4 +1,4 @@
-const trail = require('../models/trail')
+const Trail = require('../models/Trail')
 const User = require('../models/User')
 const cloudinary = require('../middleware/cloudinary')
 
@@ -6,7 +6,7 @@ module.exports = {
   getAllTrails: async (req, res) => {
     try {
       const TrailAllItems = await Trail.find();
-      res.render("index.ejs", { trails: TrailsAllItems, user: req.user });
+      res.render("index.ejs", { trails: TrailAllItems, user: req.user });
     } catch (err) {
       console.error(err);
     }
