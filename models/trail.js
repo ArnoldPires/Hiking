@@ -1,49 +1,86 @@
-const mongoose = require('mongoose')
-const TrailSchema = new mongoose.Schema({
+const mongoose = require("mongoose");
+const TrailSchema = new mongoose.Schema(
+  {
     name: {
-        type: String,
-        required: true,
-    },
-    cloudinaryId: {
-        type: String,
+      type: String,
+      required: true,
     },
     picture: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
     },
     difficultly: {
-        required: true,
-        enum: ['Easy','Medium','Hard'],
-        default: 'Difficultly',
+      type: String,
+      required: true,
+      enum: ["Easy", "Medium", "Hard"],
+      default: "Difficultly",
     },
     location: {
-        type: String,
-        required: true,
-        default: 'Location',
+      type: String,
+      required: true,
+      default: "Location",
     },
     length: {
-        type: String,
-        required: true,
+      type: Date,
+      required: true,
     },
     routeType: {
-        type: String,
-        required: true,
-        enum: ['Out & Back', 'Loop', 'Point to Point'],
-        default: 'Route Type',
+      type: String,
+      required: true,
+      enum: ["Out & Back", "Loop", "Point to Point"],
+      default: "Route Type",
     },
     suitability: {
-        type: String,
-        enum: ['Dog Friendly', 'Kid Friendly', 'Stroller Friendly', 'Wheelchair Friendly', 'Paved', 'Partially Paved'],
-        default: 'Suitability',
+      type: String,
+      required: true,
+      enum: [
+        "Dog Friendly",
+        "Kid Friendly",
+        "Stroller Friendly",
+        "Wheelchair Friendly",
+        "Paved",
+        "Partially Paved",
+      ],
+      default: "Suitability",
     },
     attractions: {
-        type: String,
-        enum: ['Waterfall', 'Views', 'Flowers', 'Lake', 'River', 'Forest', 'Wildlife', 'Beach', 'Cave', 'Hot Springs', 'Historic Site', 'Rails Trails', 'City Walk', 'Pub Walk', 'Event'],
-        default: 'Attractions',
+      type: String,
+      required: true,
+      enum: [
+        "Waterfall",
+        "Views",
+        "Flowers",
+        "Lake",
+        "River",
+        "Forest",
+        "Wildlife",
+        "Beach",
+        "Cave",
+        "Hot Springs",
+        "Historic Site",
+        "Rails Trails",
+        "City Walk",
+        "Pub Walk",
+        "Event",
+      ],
+      default: "Attractions",
+    },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
+    cloudinaryId: {
+      type: String,
     },
     createdAt: {
-        type: Date,
-        default: Date.now,
+      type: Date,
+      default: Date.now,
     },
-}, { timestamps: true })
-module.exports = mongoose.model('Trail', TrailSchema)
+  },
+  { timestamps: true }
+);
+module.exports = mongoose.model("Trail", TrailSchema);

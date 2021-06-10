@@ -30,7 +30,7 @@ exports.postLogin = (req, res, next) => {
             req.flash('errors', info)
             return res.redirect('/login')
         }
-        req.login(user, (err) => {
+        req.logIn(user, (err) => {
             console.error(err)
             if (err) { return next(err) }
             req.flash('success', {msg: "You've logged in."})
@@ -78,7 +78,7 @@ exports.postSignup = (req, res, next) => {
         email: req.body.email,
         password: req.body.password
     })
-    User.findOne({email: req.body.email}, (err, existingUser) => {
+    User.findOne({ email: req.body.email }, (err, existingUser) => {
         if (err) {return next(err)}
         if (existingUser) {
             req.flash('errors', {msg: "An account with that email adress already exists."})

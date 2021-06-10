@@ -1,9 +1,9 @@
-const trail = require('../models/trail')
+const Trail = require('../models/Trail')
 module.exports = {
     getIndex: async (req, res) => {
         try {
-            const UsersHike = await trail.find({user: req.user._id})
-            res.render('profile.ejs', {trails: UsersHike, user: req.user})
+            const UsersTrail = await Trail.find({user: req.user._id})
+            res.render('profile.ejs', {trails: UsersTrail, user: req.user})
         }catch(err) {
             console.error(err)
         }
