@@ -30,7 +30,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use("/", mainRoutes);
-app.use("/trails", trailRoutes);
+app.use("/Trail", trailRoutes);
 app.listen(process.env.PORT, () =>
   console.log(`Server is running on port ${process.env.PORT}`)
 );

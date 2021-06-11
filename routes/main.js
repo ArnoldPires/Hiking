@@ -5,7 +5,7 @@ const profileController = require("../controllers/profile");
 const trailController = require("../controllers/hiking-trails");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-router.get("/", trailController.getAllPersons);
+router.get("/", trailController.getAllTrails);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/profile", ensureAuth, trailController.getTrails);
