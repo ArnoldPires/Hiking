@@ -1,18 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiking Api</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to Boston Hiking!</h1>
-    </header>
-    <script src='js/main.js'></script>
-</body>
-</html>
+<%- include('partials/header') -%>
+<section class="container">
+    <section class="title">
+        <h2>Adventure Awaits!</h2>
+        <p>Select One Of The Many Trails Below</p>
+    </section>
+    <div class="missingPersons">
+        <ul>
+            <% trails.forEach(trail => { %>
+            <li>
+                <a href="<%= `/trails/${trail._id}` %>">
+                    <img src="<%= trail.picture %>" alt="<%= `${trail.name}` %>" loading="lazy">
+                    <p><a href="<%= `/trails/${trail._id}` %>"><%= `${trail.name}` %></a></p>
+                    <p><a href="<%= `/trails/${trail._id}` %>"><%= `${trail.location}` %></a></p>
+                    <p><a href="<%= `/trails/${trail._id}` %>"><%= `${trail.difficulty}` %></a></p>
+                    <p><a href="<%= `/trails/${trail._id}` %>"><%= `${trail.length}` %></a></p>   
+                </a>
+            </li>
+            <% }) %>
+        </ul> 
+    </div>
+</section>
+<%- include('partials/footer') -%>
