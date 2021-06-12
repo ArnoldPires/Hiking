@@ -18,38 +18,87 @@
 /* BASE STYLES
 /*******************************************/
 body {
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0) ), url(https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/2019-8/couple-hiking-mountain-climbing-1296x728-header.jpg?w=1155&h=1528);
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/2019-8/couple-hiking-mountain-climbing-1296x728-header.jpg?w=1155&h=1528);
     background-size: cover;
     background-attachment: fixed, fixed;
     background-position: top left, bottom center;
     background-repeat: no-repeat;
   text-align: center;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+button {
+	cursor: pointer;
+  border: none;
+}
+span {
+  font-weight: bold;
+  color: #36619b;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
 }
 /******************************************
 /* LAYOUT
 /*******************************************/
-.content-container {
+
+/*Header.ejs*/
+header {
   display: flex;
+  justify-content: space-between
+}
+header a {
+  color: #36619b;
+}
+/*Index.ejs*/
+
+/*Signup.ejs & Login.ejs*/
+.accountContainer {
+  font-weight: bold;
+	display: block;
+	margin: 0 auto;
+	max-width: max-content;
+  border-radius: 20px;
+  border: 2px solid white;
+  padding: 2%;
+}
+.accountContainer h2 {
+  text-align: center;
+  font-size: 40px;
+}
+.accountContainer form {
+  display: flex;
+  flex-direction: column;
+}
+.accountContainer label {
+  padding: 2%;
+}
+.accountContainer input {
   width: 100%;
 }
-.contentOne, .contentTwo {
-  background: #f5f5f5e0;
-  border-radius: 25px;
-  padding: 2%;
-  width: 45%;
-  margin: 0 auto;
+.accountContainer button {
+  height: 30px;
+  width: 80px;
+  margin: 2%;
+  background: #40a0d7;
+  color: white;
 }
-img {
-  width: 40%;
+.accountContainer p {
+  padding: 2%;
+}
+/*Profile.ejs*/
+
+/*HikingTrail.ejs*/
+
+/*Update.ejs*/
+
+/*Footer.ejs*/
+footer {
+  clear: both;
 }
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
-h2{
-  color: rgb(209, 61, 110);
-  text-transform: uppercase;
-}
-ul li{
-  list-style-type: none;
-  font-size: 30px;
-} 
