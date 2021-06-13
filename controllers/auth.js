@@ -40,7 +40,7 @@ exports.postLogin = (req, res, next) => {
 }
 exports.logout = (req, res) => {
     req.logout()
-    req.session.destory(err => {
+    req.session.destroy(err => {
         if (err) {
             console.error('Error: Failed to despose the session during the logout phase', err)
         }
