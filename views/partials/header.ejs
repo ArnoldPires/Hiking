@@ -11,14 +11,14 @@
 <body>
     <header class="container">
         <div class="logo">
-            <img src="images/cover.png">
+            <a href="/"><img src="images/cover.png"></a>
         </div>
         <ul>
             <% if(user) { %>
-	        <li><a href="/profile">Profile/</a></li>
+	        <li><a href="/profile">Profile</a></li>
 	        <li><a href="/logout">Logout</a></li>
             <% } else { %>
-		    <li><a href="/login">Login/</a></li>
+		    <li><a href="/login">Login</a></li>
 		    <li><a href="/signup">Sign Up</a></li>
             <% } %>
         </ul>
