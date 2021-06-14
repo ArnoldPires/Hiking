@@ -1,0 +1,18 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Alice-Regular
+font link: https://fonts.google.com/specimen/Alice
+font author: Ksenia Erulevich
+font author site: http://www.cyreal.org/
+
+
+icon designer: Adrien Coquet
+icon designer link: /coquet_adrien
+        
+
+fontColor: {"hex":"#CC8231"}
+bgColor: {"hex":"#0B4436"}
+iconColor: {"hex":"#CC8231"}
+
+      
