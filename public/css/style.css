@@ -18,13 +18,10 @@
 /* BASE STYLES
 /*******************************************/
 body {
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/2019-8/couple-hiking-mountain-climbing-1296x728-header.jpg?w=1155&h=1528);
-    background-size: cover;
-    background-attachment: fixed, fixed;
-    background-position: top left, bottom center;
-    background-repeat: no-repeat;
   color: white;
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #0b4436;
 }
 button {
 	cursor: pointer;
@@ -40,6 +37,9 @@ a {
 ul {
   list-style-type: none;
 }
+img {
+  vertical-align: middle;
+}
 /******************************************
 /* LAYOUT
 /*******************************************/
@@ -47,22 +47,30 @@ ul {
 /*Header.ejs*/
 header {
   display: flex;
-  justify-content: space-between
+  justify-content: space-around;
+  padding: 1rem;
 }
 header a {
-  color: #36619b;
+  color: #cc8231;
+  font-weight: bold;
 }
-/*Index.ejs*/
-
+header ul {
+  display: flex;
+}
+.logo img {
+  height: 3rem;
+  width: 17rem;
+  object-fit: cover;
+  
+}
 /*Signup.ejs & Login.ejs*/
 .accountContainer {
   font-weight: bold;
 	display: block;
 	margin: 0 auto;
-	max-width: max-content;
   border-radius: 20px;
-  border: 2px solid white;
   padding: 2%;
+  width: 40rem;
 }
 .accountContainer h2 {
   text-align: center;
@@ -87,6 +95,47 @@ header a {
 }
 .accountContainer p {
   padding: 2%;
+}
+/*Index.ejs*/
+
+/*SlideShow*/
+
+.text h2 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 65px;
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+}
+.Slideimage1 {
+  background: linear-gradient(#18161626,#18161626), url(../images/hikeImage9.jpg);
+}
+.Slideimage2 {
+  background: linear-gradient(#18161626,#18161626), url(../images/hikeImage5.jpg);
+}
+.Slideimage3 {
+   background: linear-gradient(#18161626,#18161626), url(../images/hikeImage3.jpg);
+}
+.Slideimage4 {
+   background: linear-gradient(#18161626,#18161626), url(../images/hikeImage4.jpg);
+}
+.slideshow {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+.carouselImage {
+  height: 45rem;
+  background-size: cover;
+  background-attachment: fixed, fixed;
+  background-position: top left, bottom center;
+  background-repeat: no-repeat;
+}
+.carouselImage img {
+  width: 100%;
 }
 /*Profile.ejs*/
 
