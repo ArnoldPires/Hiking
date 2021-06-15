@@ -1,18 +1,20 @@
 <%- include('partials/header') -%>
-    <% if (locals.messages.errors) { %>
-        <% messages.errors.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div>
-        <% }) %>    
-    <% } %>
+<section class="signUpContainer">
 <section class="accountContainer">
     <h2>Account Creation</h2>
     <form method="post" action="/signup">
         <label>Name: <input type="text" name="name"></label>
         <label>Email: <input type="email" name="email"></label>
         <label>Password: <input type="password" name="password"></label>
-        <label>Confirm password: <input type="password" name="confirmPassword" autocomplete="false"></label>
+        <label>Confirm Password: <input type="password" name="confirmPassword" autocomplete="false"></label>
         <button type="submit">Submit</button>
+    <% if (locals.messages.errors) { %>
+        <% messages.errors.forEach( el => { %>
+            <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %>    
+    <% } %>
     </form>
     <p>Already have an account? Click <a href="/login">here.</a></p>
+</section>
 </section>
 <%- include('partials/footer') -%>

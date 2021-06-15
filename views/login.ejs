@@ -1,7 +1,12 @@
 <%- include('partials/header') -%>
+<section class="loginContainer">
 <section class="accountContainer">
     <h2>Account Login</h2>
-        <% if (locals.messages.errors) { %>
+    <form method="POST" action="/login">
+        <label>Email: <input type="email" name="email"></label>
+        <label>Password: <input type="password" name="password"></label>
+        <button type="submit">Submit</button>
+         <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
@@ -11,13 +16,10 @@
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <form method="POST" action="/login">
-        <label>Email: <input type="email" name="email"></label>
-        <label>Password: <input type="password" name="password"></label>
-        <button type="submit">Submit</button>
     </form>
     <div>
         <p>Don't have an account? Sign up <a href="/signup">here</a></p>
     </div>
+</section>
 </section>
 <%- include('partials/footer') -%>
