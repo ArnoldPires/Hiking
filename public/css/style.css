@@ -67,13 +67,28 @@ header ul li {
   padding-right: 1rem;
 }
 /*Signup.ejs & Login.ejs*/
+.loginContainer {
+   background-image: linear-gradient(#18161626,#18161626), url(../images/hikeImage7.jpg);
+}
+.signUpContainer {
+  background-image: linear-gradient(#18161626,#18161626), url(../images/hikeImage6.jpg); 
+}
+.loginContainer, .signUpContainer {
+  height: 83vh;
+  background-size: cover;
+  background-attachment: fixed, fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 5rem;
+}
 .accountContainer {
+  background-color: #0b4436bf;
   font-weight: bold;
 	display: block;
 	margin: 0 auto;
-  border-radius: 20px;
-  padding: 2%;
   width: 40rem;
+  padding-top: 1rem;
+  border-radius: 15px;
 }
 .accountContainer h2 {
   text-align: center;
@@ -93,16 +108,23 @@ header ul li {
   height: 30px;
   width: 80px;
   margin: 2%;
-  background: #40a0d7;
+  background: #cc8231;
   color: white;
+  border-radius: 5px;
 }
 .accountContainer p {
   padding: 2%;
 }
+.accountContainer p a {
+  color: #cc8231;
+}
+.alert, .alert-danger {
+  text-align: center;
+  color:crimson;
+}
 /*Index.ejs*/
 
 /*SlideShow*/
-
 .text h2 {
   position: absolute;
   top: 30%;
@@ -172,6 +194,10 @@ header ul li {
 footer {
   clear: both;
   text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
 }
 /******************************************
 /* ADDITIONAL STYLES
