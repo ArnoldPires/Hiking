@@ -1,3 +1,101 @@
 <%- include('partials/header') -%>
-
+<section class="profile-container">
+	<section class="userContainer">
+		<div class="userinfo">
+			<p><span>UserName: </span><%= `${user.name}`%></p>
+			<p><span>Email: </span><%= `${user.email}`%></p>
+		</div>
+		<div class="submissionContainer">
+			<h2>Submit Your Own Hike/Trail Here</h2>
+			<output class="notification" aria-live="polite"></output>
+			<section>
+			<form class="submissionform" id="add-trail-form" action="/trails/createTrail" method="POST" enctype="multipart/form-data">
+				<div class="form">
+					<label><span>Hike/Trail Name: </span><input type='text' placeholder='Enter a name' name='name'></label>
+					<label><span>Length: </span><input type='text' placeholder='Enter Length of Trail' name='name'></label>
+					<label><span>Difficultly: </span><select name="difficultly">
+						<option value="" disabled selected hidden>Select Difficultly:</option>
+						<option value="Easy">Easy</option>
+						<option value="Medium">Medium</option>
+						<option value="Hard">Hard</option>
+					</select></label>
+                    <label><span>Attraction: </span><select name="activity">
+						<option value="" disabled selected hidden>Select Attraction:</option>
+                        <option value="Waterfall">Waterfall</option>
+                        <option value="Views">Views</option>
+                        <option value="Flowers">Flowers</option>
+                        <option value="Lake">Lake</option>
+                        <option value="River">River</option>
+                        <option value="Forest">Forest</option>
+                        <option value="Wildlife">Wildlife</option>
+                        <option value="Beach">Beach</option>
+                        <option value="Cave">Cave</option>
+                        <option value="Hot Springs">Hot Springs</option>
+                        <option value="Historic Site">Historic Site</option>
+                        <option value="Rail Trails">Rail Trails</option>
+                        <option value="City Walk">City Walk</option>
+                        <option value="Pub Walk">Pub Walk</option>
+                        <option value="Event">Event</option>
+                        </select>
+					</label>
+				</div>
+				<div class="form">
+					<label><span>Suitability: </span>
+						<select name="suitability">
+						<option value="" disabled selected hidden>Suitability:</option>
+						<option value="Dog Friendly">Dog Friendly</option>
+						<option value="Kid Friendly">Kid Friendly</option>
+						<option value="Stroller Friendly">Stroller Friendly</option>
+						<option value="Wheelchair Friendly">Wheelchair Friendly</option>
+						<option value="Paved">Paved</option>
+						<option value="Partially Paved">Partially Paved</option>
+						</select>
+					</label>
+					<label>
+						<span>Route Type: </span>
+						<select name="routeType">
+						<option value="Out & Back">Out & Back</option>
+						<option value="Loop">Loop</option>
+						<option value="Point to Point">Point to Point</option>
+						</select>
+					</label>
+					<label>
+						<span>Trail Image: </span>
+						<input type="file" name="file">
+					</label>
+				</section>
+				</div>
+				<h2>Use the map below to set your own personal trail:</h2>
+				<section class="map">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d8342.69084188201!2d-71.03509335329524!3d42.33001468391614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x89e37aaf5d5ccadd%3A0x9b07f3674b05d5d4!2sSullivan&#39;s%20Castle%20Island!3m2!1d42.338821499999995!2d-71.0131356!4m5!1s0x89e37af70fcb4187%3A0x83b2824d8ecca92d!2sMetropolitan%20District%20Commission%20Rest%2C%20165%20HarborWalk%2C%20Boston%2C%20MA%2002125!3m2!1d42.323375899999995!2d-71.0461365!5e0!3m2!1sen!2sus!4v1623792123409!5m2!1sen!2sus"
+					style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				</section>
+				<div class="description">
+					<h2><span>Description:</span></h2><textarea placeholder='Description' name='description'></textarea>
+				</div>
+				<button class="submitbutton">Submit</button>
+			</form>
+		</div>
+			<section>
+	<h3>Your Submissions</h3>
+		<%_ if(!trails || trails.length === 0) { _%>
+			<p>You have not submitted any trails</p>
+		<% } else { %>
+			<ul class="submissionslist">
+				<% trails.forEach(trail => { %>
+					<li class="submission" data-id='<%= `${trail._id}` %>'>
+						<a href="<%= `/trails/${trail._id}` %>"><img class="submissionimage" src="<%= trail.picture %>" alt="<%= `${trail.name}` %>" loading="lazy" width="64" height="64"></a>
+						<a href="<%= `/trails/${trial._id}` %>" class="submissionname"><%= trail.name %></a>
+						<div class="submissionbuttons">
+				<a class="submissionbutton" href="<%= `/trails/updateTrail/${trail._id}` %>">Update</a>
+				<button class='del submissionbutton' data-id="<%= trail.id %>">Delete</button>
+						</div>
+			</li>
+				<% }) %>
+			</ul>
+		<%_ } _%>
+	</section>
+	</section>
+</section>
 <%- include('partials/footer') -%>

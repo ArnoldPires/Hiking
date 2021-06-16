@@ -29,7 +29,7 @@ button {
 }
 span {
   font-weight: bold;
-  color: #36619b;
+  color: #cc8231;
 }
 a {
   text-decoration: none;
@@ -39,6 +39,9 @@ ul {
 }
 img {
   vertical-align: middle;
+}
+.container {
+  margin: 0 10% 0 10%;
 }
 /******************************************
 /* LAYOUT
@@ -185,7 +188,130 @@ header ul li {
   width: 100%;
 }
 /*Profile.ejs*/
-
+.profile-container {
+  background-image: linear-gradient(#18161626,#18161626), url(../images/hikeImage8.jpg); 
+  background-size: cover;
+  background-attachment: fixed, fixed;
+  background-repeat: no-repeat;
+  background-position: center, bottom;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.userContainer {
+  background-color: #0b4436bf;
+  font-weight: bold;
+	display: block;
+	margin: 0 auto;
+  width: 100rem;
+  padding: 2rem;
+  border-radius: 15px;
+}
+.notification {
+	position: fixed;
+	z-index: 2;
+	top: 2rem;
+	left: 50%;
+	transition: 0.1s ease-in-out;
+	transition-property: visibility, opacity, transform;
+	background: white;
+	padding: 0.5em 1em;
+}
+.notification {
+	visibility: hidden;
+	opacity: 0;
+	transform: translate(-50%, -100%);
+}
+.notification.show {
+	visibility: visible;
+	opacity: 1;
+	transform: translate(-50%, 0%);
+}
+.submissionContainer h2, .userContainer h2 {
+  text-align: center;
+}
+.submissionform {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+.submissionform label {
+	display: flex;
+	justify-content: end;
+	gap: 1rem;
+  padding: 1rem;
+}
+.submissionform input,
+.submissionform select {
+	width: 12rem;
+}
+.submissionform > h2 {
+	grid-column: 1 / 3;
+}
+.map iframe {
+	z-index: 0; /* Fix map overlapping notification */
+	justify-self: normal;
+  width: 60rem;
+  display: flex;
+  margin: 0 auto;
+  height: 50vh;
+}
+.description {
+	grid-column: 1 / 3;
+  width: 50rem;
+  display: contents;
+}
+.description textarea {
+	width: 60rem;
+	min-height: 10rem;
+  margin: 0 auto;
+  display: flex;
+}
+.submitbutton {
+	grid-column: 1 / 3;
+  background-color: #cc8231;
+  color: white;
+  padding: 0.5em 1em;
+  display: flex;
+  margin: 0 auto;
+  font-size: 100%;
+  margin-top: 1rem;
+}
+.submissionslist {
+	padding: 0;
+	display: flex;
+	gap: 4rem;
+}
+.submission {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+.submissionperson {
+	padding: 1rem;
+	border: 1px solid #40a0d7;
+}
+.submissionimage {
+	width: 4rem;
+	border-radius: 50%;
+}
+.submissionname {
+	margin: 0;
+	color: black;
+}
+.submissionbuttons {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+}
+.submissionbutton, .update {
+	display: inline-block;
+	border: none;
+	font-size: 90%;
+	color: white;
+	background: #cc8231;
+	margin: 0.5rem;
+	padding: 0.5em 1em;
+}
 /*HikingTrail.ejs*/
 
 /*Update.ejs*/
@@ -195,9 +321,8 @@ footer {
   clear: both;
   text-align: center;
   position: absolute;
-  bottom: 0;
   width: 100%;
-  height: 2.5rem;
+  height: 3.5rem;
 }
 /******************************************
 /* ADDITIONAL STYLES
