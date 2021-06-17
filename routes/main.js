@@ -2,13 +2,13 @@ const express = require("express");
 const router = express.Router();
 const authController = require("../controllers/auth");
 const profileController = require("../controllers/profile");
-const trailController = require("../controllers/hiking-trails");
+const trailsController = require("../controllers/hiking-trails");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-router.get("/", trailController.getAllTrails);
+router.get("/", trailsController.getAllTrails);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
-router.get("/profile", ensureAuth, trailController.getTrails);
+router.get("/profile", ensureAuth, trailsController.getTrails);
 router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
