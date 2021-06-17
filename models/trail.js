@@ -22,7 +22,7 @@ const TrailSchema = new mongoose.Schema(
     location: {
       type: String,
       required: true,
-      default: "Location",
+      default: "location",
     },
     length: {
       type: Date,
@@ -45,7 +45,7 @@ const TrailSchema = new mongoose.Schema(
         "Paved",
         "Partially Paved",
       ],
-      default: "Suitability",
+      default: "suitability",
     },
     attractions: {
       type: String,

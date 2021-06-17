@@ -313,7 +313,48 @@ header ul li {
 	padding: 0.5em 1em;
 }
 /*HikingTrail.ejs*/
-
+.mainsectiontop {
+  display: flex;
+  justify-content: space-around;
+  height: 500px;
+}
+article {
+  width: 50%;
+  float: left;
+}
+.mainsectionbottom{
+  padding: 25px;
+  height:50%;
+  align-content: center;
+}
+.mainsectionbottom h2 {
+  text-align: center;
+}
+.infoWrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+.description {
+  text-align: center;
+  padding-bottom: 1rem;
+  margin: 0 auto;
+  width: 60rem;
+}
+#submission {
+  align-self:left;
+}
+#submission p {
+  margin: 0;
+}
+.bigimage img {
+  width: 100%;
+  object-fit: contain;
+  height: 26.3rem;
+  padding: 1rem;
+}
+.smallerimges{
+    width:100%;
+}
 /*Update.ejs*/
 
 /*Footer.ejs*/
