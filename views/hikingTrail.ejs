@@ -10,7 +10,6 @@
                 <p class="name"><span>Hike/Trail Name: </span><%= trail.name %></p>
                 <p class="submittedby"><span>Submitted By: </span><%= trail.user.name %></p>
                 <p class="datesubmitted"><span>Date Submitted: </span><%= new Intl.DateTimeFormat('en', {dateStyle: 'full', timeStyle: 'short'}).format(trail.createdAt) %></p>
-                <p class="status"><span>Length: </span><%= trail.status %></p>
             <section class="bigimage">                       
                 <img src="<%= trail.picture %>" alt="<%= trail.name %>">
             </section>
@@ -33,7 +32,7 @@
        <h2><span>Information</span></h2>
        <section class="infoWrapper">
             <section>
-                <p class="attractions"><span>Attraction: </span><%= trail.attractions %></p>
+                <p class="attractions"><span>Attractions: </span><%= trail.attractions %></p>
                 <p class="length"><span>Length: </span><%= trail.length %></p>
                 <p class="routeType"><span>Route Type: </span><%= trail.routeType %> </p>
             </section>

@@ -356,7 +356,14 @@ article {
     width:100%;
 }
 /*Update.ejs*/
-
+.updateContainer h2 {
+  text-align: center;
+}
+.upCan {
+	grid-column: 1 / 3;
+  display: flex;
+  justify-content: center;
+}
 /*Footer.ejs*/
 footer {
   clear: both;
