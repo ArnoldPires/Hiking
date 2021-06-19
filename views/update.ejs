@@ -1,3 +1,69 @@
 <%- include('partials/header') -%>
-
+<section class="container">
+  <section class="updateContainer">
+		<p><span>UserName: </span><%= `${user.name}`%></p>
+		<p><span>Email: </span><%= `${user.email}`%></p>
+		<h2>Update Trail</h2>
+		<form class="submissionform update-trail-form" action="/hiking-trails/createTrail" method="POST" enctype="multipart/form-data">
+			<div class="form">
+				<label><span>Hike/Trail Name: </span><input type='text' placeholder='Enter a name' name='name' value="<%= trail.name %>"></label>
+				<label><span>Length:  </span><select name="length"></label>
+                <label><span>Difficultly: </span><select name="difficultly">
+                    <option value="" disabled selected hidden>Select Difficultly:</option>
+					<option value="Easy" <%= trail.difficultly === 'Easy' && 'selected' %>>Easy</option>
+					<option value="Medium" <%= trail.difficultly === 'Medium' && 'selected' %>>Medium</option>
+					<option value="Hard" <%= trail.difficultly === 'Hard' && 'selected' %>>Hard</option>
+				</select></label>
+                <label><span>Attractions: </span><select name="attractions">
+                    <option value="" disabled selected hidden>Select Attraction:</option>
+					<option value="Waterfall" <%= trail.attractions === 'Waterfall' && 'selected' %>>Waterfall</option>
+					<option value="Views" <%= trail.attractions === 'Views' && 'selected' %>>Views</option>
+					<option value="Flowers" <%= trail.attractions === 'Flowers' && 'selected' %>>Flowers</option>
+					<option value="Lake" <%= trail.attractions === 'Lake' && 'selected' %>>Lake</option>
+					<option value="River" <%= trail.attractions === 'River' && 'selected' %>>River</option>
+                    <option value="Forest" <%= trail.attractions === 'Forest' && 'selected' %>>Forest</option>
+                    <option value="Wildlife" <%= trail.attractions === 'Wildlife' && 'selected' %>>Wildlife</option>
+                    <option value="Beach" <%= trail.attractions === 'Beach' && 'selected' %>>Beach</option>
+                    <option value="Cave" <%= trail.attractions === 'Cave' && 'selected' %>>Cave</option>
+                    <option value="Hot Springs" <%= trail.attractions === 'Hot Springs' && 'selected' %>>Hot Springs</option>
+                    <option value="Historic Site" <%= trail.attractions === 'Historic Site' && 'selected' %>>Historic Site</option>
+                    <option value="Rail Trails" <%= trail.attractions === 'Rail Trails' && 'selected' %>>Rail Trails</option>
+                    <option value="City Walk" <%= trail.attractions === 'City Walk' && 'selected' %>>City Walk</option>
+                    <option value="Pub Walk" <%= trail.attractions === 'Pub Walk' && 'selected' %>>Pub Walk</option>
+                    <option value="Event" <%= trail.attractions === 'Event' && 'selected' %>>Event</option>
+					</select></label>
+			</div>
+			<div class="form">
+				<label><span>Suitability: </span><select name="suitability">
+                    <option value="" disabled selected hidden>Suitability:</option>
+					<option value="Dog Friendly" <%= trail.suitability === 'Dog Friendly' && 'selected' %>>Dog Friendly</option>
+					<option value="Kid Friendly" <%= trail.suitability === 'Kid Friendly' && 'selected' %>>Kid Friendly</option>
+					<option value="Stroller Friendly" <%= trail.suitability === 'Stroller Friendly' && 'selected' %>>Stroller Friendly</option>
+                    <option value="Wheelchair Friendly" <%= trail.suitability === 'Wheelchair Friendly' && 'selected' %>>Wheelchair Friendly</option>
+                    <option value="Paved" <%= trail.suitability === 'Paved' && 'selected' %>>Paved</option>
+                    <option value="Partially Paved" <%= trail.suitability === 'Partially Paved' && 'selected' %>>Partially Paved</option>
+				</select></label>
+				<label><span>Route Type: </span><select name="routeType">
+                    <option value="" disabled selected hidden>Route Type:</option>
+					<option value="Out & Back" <%= trail.routeType === 'Out & Back' && 'selected' %>>Out & Back</option>
+					<option value="Loop" <%= trail.routeType === 'Loop' && 'selected' %>>Loop</option>
+					<option value="Point to Point" <%= trail.routeType === 'Point to Point' && 'selected' %>>Point to Point</option>
+				</select></label>
+				<label><span>Trail Image: </span><input type="file" name="file"></label>
+			</div>
+            <section class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d8342.69084188201!2d-71.03509335329524!3d42.33001468391614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x89e37aaf5d5ccadd%3A0x9b07f3674b05d5d4!2sSullivan&#39;s%20Castle%20Island!3m2!1d42.338821499999995!2d-71.0131356!4m5!1s0x89e37af70fcb4187%3A0x83b2824d8ecca92d!2sMetropolitan%20District%20Commission%20Rest%2C%20165%20HarborWalk%2C%20Boston%2C%20MA%2002125!3m2!1d42.323375899999995!2d-71.0461365!5e0!3m2!1sen!2sus!4v1623792123409!5m2!1sen!2sus"
+                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </section>
+			<div class="description">
+				<h2><span>Description:</span></h2><textarea placeholder='Description' name='description'></textarea>
+			</div>
+			<div class="upCan">
+				<button class="update">Update</button>
+				<a class="update" href="/trails/<%= trail.id %>">Cancel</a>
+			</div>
+		</form>
+	</section>
+</section>
 <%- include('partials/footer') -%>

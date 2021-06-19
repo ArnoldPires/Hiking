@@ -12,14 +12,14 @@
 			<form class="submissionform" id="add-trail-form" action="/hiking-trails/createTrail" method="POST" enctype="multipart/form-data">
 				<div class="form">
 					<label><span>Trail Name: </span><input type='text' placeholder='Enter a name' name='name'></label>
-					<label><span>Length: </span><input type='text' placeholder='Enter Length of Trail' name='name'></label>
+					<label><span>Length: </span><input type='text' placeholder='Enter Length of Trail' name='length'></label>
 					<label><span>Difficultly: </span><select name="difficultly">
 						<option value="" disabled selected hidden>Select Difficultly:</option>
 						<option value="Easy">Easy</option>
 						<option value="Medium">Medium</option>
 						<option value="Hard">Hard</option>
 					</select></label>
-                    <label><span>Attraction: </span><select name="activity">
+                    <label><span>Attractions: </span><select name="attractions">
 						<option value="" disabled selected hidden>Select Attraction:</option>
                         <option value="Waterfall">Waterfall</option>
                         <option value="Views">Views</option>
