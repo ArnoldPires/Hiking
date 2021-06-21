@@ -6,7 +6,7 @@ const passport = require("passport");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const mainRoutes = require("./routes/main");
-const trailRoutes = require("./routes/hiking-trails");
+const trailRoutes = require("./routes/trails");
 const flash = require("express-flash");
 const mongoose = require("mongoose");
 
@@ -18,6 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 app.use(express.static("views"));
 app.use(
   session({
@@ -31,11 +34,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use("/", mainRoutes);
-app.use("/Trail", trailRoutes);
+app.use("/trails", trailRoutes);
 app.listen(process.env.PORT, () =>
   console.log(`Server is running on port ${process.env.PORT}`)
 );
-
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
-}
