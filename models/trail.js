@@ -17,22 +17,15 @@ const TrailSchema = new mongoose.Schema(
       type: String,
       required: true,
       enum: ["Easy", "Medium", "Hard"],
-      default: "Difficultly",
-    },
-    location: {
-      type: String,
-      required: true,
-      default: "location",
     },
     length: {
-      type: Date,
+      type: String,
       required: true,
     },
     routeType: {
       type: String,
       required: true,
       enum: ["Out & Back", "Loop", "Point to Point"],
-      default: "Route Type",
     },
     suitability: {
       type: String,
@@ -45,7 +38,6 @@ const TrailSchema = new mongoose.Schema(
         "Paved",
         "Partially Paved",
       ],
-      default: "suitability",
     },
     attractions: {
       type: String,
@@ -67,7 +59,6 @@ const TrailSchema = new mongoose.Schema(
         "Pub Walk",
         "Event",
       ],
-      default: "Attractions",
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,

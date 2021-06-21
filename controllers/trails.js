@@ -37,13 +37,12 @@ module.exports = {
         difficultly: req.body.difficultly,
         length: req.body.length,
         routeType: req.body.routeType,
-        location: req.body.location,
         description: req.body.description,
         suitability: req.body.suitability,
         attractions: req.body.attractions,
         user: req.user,
       });
-      res.redirect(`/hiking-trails/${trail._id}`);
+      res.redirect(`/trails/${trail._id}`);
     } catch (err) {
       console.error(err);
     }
@@ -53,7 +52,7 @@ module.exports = {
     const { id } = req.params;
     try {
       const trail = await Trail.findById(id).populate("user");
-      res.render("hiking-trails.ejs", {
+      res.render("trail.ejs", {
         trail: trail,
         user: req.user
       });

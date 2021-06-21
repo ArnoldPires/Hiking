@@ -126,7 +126,38 @@ header ul li {
   color:crimson;
 }
 /*Index.ejs*/
-
+title h2 {
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 5px;
+}
+.uploadedTrails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+.uploadedTrails ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.uploadedTrails img {
+  width: 18rem;
+  object-fit: fill;
+  height: 20rem;
+  padding: 15px
+}
+.uploadedTrails p {
+  text-align: center;
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.uploadedTrails a {
+  color: #40a0d7;
+  text-decoration: none;
+}
 /*SlideShow*/
 .text h2 {
   position: absolute;

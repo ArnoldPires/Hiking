@@ -4,7 +4,7 @@
 		<p><span>UserName: </span><%= `${user.name}`%></p>
 		<p><span>Email: </span><%= `${user.email}`%></p>
 		<h2>Update Trail</h2>
-		<form class="submissionform update-trail-form" action="/hiking-trails/createTrail" method="POST" enctype="multipart/form-data">
+		<form class="submissionform update-trail-form" action="/trails/createTrail" method="POST" enctype="multipart/form-data">
 			<div class="form">
 				<label><span>Hike/Trail Name: </span><input type='text' placeholder='Enter a name' name='name' value="<%= trail.name %>"></label>
 				<label><span>Length:  </span><select name="length"></label>
@@ -51,11 +51,11 @@
 				</select></label>
 				<label><span>Trail Image: </span><input type="file" name="file"></label>
 			</div>
-            <section class="map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d8342.69084188201!2d-71.03509335329524!3d42.33001468391614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x89e37aaf5d5ccadd%3A0x9b07f3674b05d5d4!2sSullivan&#39;s%20Castle%20Island!3m2!1d42.338821499999995!2d-71.0131356!4m5!1s0x89e37af70fcb4187%3A0x83b2824d8ecca92d!2sMetropolitan%20District%20Commission%20Rest%2C%20165%20HarborWalk%2C%20Boston%2C%20MA%2002125!3m2!1d42.323375899999995!2d-71.0461365!5e0!3m2!1sen!2sus!4v1623792123409!5m2!1sen!2sus"
-                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </section>
+			<section class="map">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d8342.69084188201!2d-71.03509335329524!3d42.33001468391614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x89e37aaf5d5ccadd%3A0x9b07f3674b05d5d4!2sSullivan&#39;s%20Castle%20Island!3m2!1d42.338821499999995!2d-71.0131356!4m5!1s0x89e37af70fcb4187%3A0x83b2824d8ecca92d!2sMetropolitan%20District%20Commission%20Rest%2C%20165%20HarborWalk%2C%20Boston%2C%20MA%2002125!3m2!1d42.323375899999995!2d-71.0461365!5e0!3m2!1sen!2sus!4v1623792123409!5m2!1sen!2sus"
+					style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+			</section>
 			<div class="description">
 				<h2><span>Description:</span></h2><textarea placeholder='Description' name='description'></textarea>
 			</div>

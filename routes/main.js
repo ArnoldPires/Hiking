@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const authController = require("../controllers/auth");
 const profileController = require("../controllers/profile");
-const trailsController = require("../controllers/hiking-trails");
+const trailsController = require("../controllers/trails");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/", trailsController.getAllTrails);
