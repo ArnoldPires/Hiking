@@ -2,7 +2,7 @@
   "name": "hiking",
   "version": "1.0.0",
   "description": "Hiking API",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/ArnoldPires/Hiking/issues"
   },
-  "homepage": "https://github.com/ArnoldPires/Hiking#readme",
+  "homepage": "https://github.com/ArnoldPires/Hiking",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.25.1",
