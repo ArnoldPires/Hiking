@@ -14,7 +14,7 @@ require("dotenv").config({ path: "./config/.env" });
 require("./config/passport")(passport);
 connectDB();
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.set("view engine", "ejs");
 app.use(express.static("public"));
