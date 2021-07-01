@@ -18,6 +18,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.set("view engine", "ejs")
 app.use(express.static("public"))
+app.use("/public/images/", express.static("./public/images"));
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
