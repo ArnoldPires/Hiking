@@ -35,11 +35,13 @@ module.exports = {
         cloudinaryId: result.public_id,
         picture: result.secure_url,
         difficultly: req.body.difficultly,
+        location: req.body.location,
         length: req.body.length,
         routeType: req.body.routeType,
         description: req.body.description,
         suitability: req.body.suitability,
         attractions: req.body.attractions,
+        gMaps: req.body.gMaps,
         user: req.user,
       });
       res.redirect(`/trails/${trail._id}`);

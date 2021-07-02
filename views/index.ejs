@@ -23,8 +23,8 @@
         </section>
     </section>
     <section class="title">
-        <h2>Adventure Awaits!</h2>
-        <p>Select One Of The Many Trails Below</p>
+        <h2>User Created Trails!</h2>
+        <p>Select One Of The Many Trails Below:</p>
     </section>
     <div class="uploadedTrails">
         <ul>
@@ -33,8 +33,9 @@
                 <a href="<%= `/trails/${trail._id}` %>">
                     <img src="<%= trail.picture %>" alt="<%= `${trail.name}` %>" loading="lazy">
                     <p><a href="<%= `/trails/${trail._id}` %>"><%= `${trail.name}` %></a></p>
+                    <p><a href="<%= `/trails/${trail._id}` %>"><%= `${trail.location}` %></a></p> 
                     <p><a href="<%= `/trails/${trail._id}` %>"><%= `${trail.difficultly}` %></a></p>
-                    <p><a href="<%= `/trails/${trail._id}` %>"><%= `${trail.length}` %></a></p>   
+                    <p><a href="<%= `/trails/${trail._id}` %>"><%= `${trail.length}` %></a></p>
                 </a>
             </li>
             <% }) %>

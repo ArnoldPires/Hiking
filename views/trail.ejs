@@ -1,15 +1,15 @@
 <%- include('partials/header') -%>
 <div class='container'>
-  <% if(user && user.id == trail.user.id) { %>
-	<a class="update" href="<%= `/trails/updateTrail/${trail.id}` %>">Update</a>
-	<button class='del update' data-id="<%= trail.id %>">Delete</button>
-  <% } %>
   <div class="mainsectiontop">
         <article class="leftsection">
             <section id="submission">
                 <p class="name"><span>Hike/Trail Name: </span><%= trail.name %></p>
                 <p class="submittedby"><span>Submitted By: </span><%= trail.user.name %></p>
                 <p class="datesubmitted"><span>Date Submitted: </span><%= new Intl.DateTimeFormat('en', {dateStyle: 'full', timeStyle: 'short'}).format(trail.createdAt) %></p>
+                <% if(user && user.id==trail.user.id) { %>
+                    <a class="update" href="<%= `/trails/updateTrail/${trail.id}` %>">Update</a>
+                    <button class='del update' data-id="<%= trail.id %>">Delete</button>
+                    <% } %>
             <section class="bigimage">                       
                 <img src="<%= trail.picture %>" alt="<%= trail.name %>">
             </section>
@@ -18,9 +18,7 @@
         <article class="rightsection">
             <h2><span>Trail:</span></h2>
             <section class="map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d8342.69084188201!2d-71.03509335329524!3d42.33001468391614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x89e37aaf5d5ccadd%3A0x9b07f3674b05d5d4!2sSullivan&#39;s%20Castle%20Island!3m2!1d42.338821499999995!2d-71.0131356!4m5!1s0x89e37af70fcb4187%3A0x83b2824d8ecca92d!2sMetropolitan%20District%20Commission%20Rest%2C%20165%20HarborWalk%2C%20Boston%2C%20MA%2002125!3m2!1d42.323375899999995!2d-71.0461365!5e0!3m2!1sen!2sus!4v1623792123409!5m2!1sen!2sus"
-                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <img src="<%= trail.gMaps %>"style="border:0;" allowfullscreen="" loading="lazy">
             </section>
         </article>
   </div>
@@ -30,10 +28,11 @@
             <section>
                 <p class="attractions"><span>Attractions: </span><%= trail.attractions %></p>
                 <p class="length"><span>Length: </span><%= trail.length %></p>
-                <p class="routeType"><span>Route Type: </span><%= trail.routeType %> </p>
+                <p class="location"><span>Location: </span><%= trail.location %> </p>
             </section>
             <section>
                 <p class="suitability"><span>Suitability: </span><%= trail.suitability %></p>
+                <p class="routeType"><span>Route Type: </span><%= trail.routeType %> </p>
             </section>
             </section>
         </section>
