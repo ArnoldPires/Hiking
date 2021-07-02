@@ -79,7 +79,7 @@ header ul li {
 .loginContainer, .signUpContainer {
   height: 83vh;
   background-size: cover;
-  background-attachment: fixed, fixed;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
   padding-top: 5rem;
@@ -142,20 +142,20 @@ title h2 {
   flex-wrap: wrap;
 }
 .uploadedTrails img {
-  width: 18rem;
+  width: 20rem;
   object-fit: fill;
-  height: 20rem;
-  padding: 15px
+  height: 12rem;
+  padding: 15px;
+  border-radius: 20px;
 }
 .uploadedTrails p {
   text-align: center;
   margin: 0;
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: bold;
-  text-transform: uppercase;
 }
 .uploadedTrails a {
-  color: #40a0d7;
+  color: #cc8231;
   text-decoration: none;
 }
 /*SlideShow*/
@@ -208,9 +208,8 @@ title h2 {
 }
 .carouselImage {
   width: 100%;
-  height: 45rem;
+  height: inherit;
   background-size: cover;
-  background-attachment: fixed, fixed;
   background-position: top left, bottom center;
   background-repeat: no-repeat;
   position: absolute;
@@ -222,7 +221,7 @@ title h2 {
 .profile-container {
   background-image: linear-gradient(#18161626,#18161626), url(../images/hikeImage8.jpg); 
   background-size: cover;
-  background-attachment: fixed, fixed;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center, bottom;
   padding-top: 5rem;
@@ -257,7 +256,7 @@ title h2 {
 	opacity: 1;
 	transform: translate(-50%, 0%);
 }
-.submissionContainer h2, .userContainer h2 {
+.submissionContainer h2, .submissionContainer p, .userContainer h2 {
   text-align: center;
 }
 .submissionform {
@@ -278,13 +277,17 @@ title h2 {
 .submissionform > h2 {
 	grid-column: 1 / 3;
 }
-.map iframe {
-	z-index: 0; /* Fix map overlapping notification */
-	justify-self: normal;
-  width: 60rem;
+.map  {
+  height: 40vh;
   display: flex;
-  margin: 0 auto;
-  height: 50vh;
+  justify-content: center;
+}
+.map a, .map img {
+  height: inherit;
+}
+.trailLink {
+  text-align: center;
+  padding: 1rem;
 }
 .description {
 	grid-column: 1 / 3;
@@ -346,12 +349,9 @@ title h2 {
 /*HikingTrail.ejs*/
 .mainsectiontop {
   display: flex;
-  justify-content: space-around;
-  height: 500px;
-}
-article {
-  width: 50%;
-  float: left;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 .mainsectionbottom{
   padding: 25px;
@@ -377,11 +377,16 @@ article {
 #submission p {
   margin: 0;
 }
-.bigimage img {
+.bigimage {
+  position: relative;
+  height: 35rem;
   width: 100%;
+}
+.bigimage img {
   object-fit: contain;
-  height: 26.3rem;
+  height: 100%;
   padding: 1rem;
+  display: block;
 }
 .smallerimges{
     width:100%;

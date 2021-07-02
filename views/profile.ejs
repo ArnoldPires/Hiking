@@ -61,9 +61,66 @@
 						<label>
 							<span>Route Type: </span>
 							<select name="routeType">
+								<option value="" disabled selected hidden> Select Route Type:</option>
 								<option value="Out & Back">Out & Back</option>
 								<option value="Loop">Loop</option>
 								<option value="Point to Point">Point to Point</option>
+							</select>
+						</label>
+						<label>
+							<span>Location: </span>
+							<select name="location">
+								<option value="" disabled selected hidden> Select State:</option>
+								<option value="Alabama">Alabama</option>
+								<option value="Alaska">Alaska</option>
+								<option value="Arizona">Arizona</option>
+								<option value="Arkansas">Arkansas</option>
+								<option value="California">California</option>
+								<option value="Colorado">Colorado</option>
+								<option value="Connecticut">Connecticut</option>
+								<option value="Delaware">Delaware</option>
+								<option value="Florida">Florida</option>
+								<option value="Georgia">Georgia</option>
+								<option value="Hawaii">Hawaii</option>
+								<option value="Idaho">Idaho</option>
+								<option value="Illinois">Illinois</option>
+								<option value="Indiana">Indiana</option>
+								<option value="Iowa">Iowa</option>
+								<option value="Kansas">Kansas</option>
+								<option value="Kentucky">Kentucky</option>
+								<option value="Louisiana">Louisiana</option>
+								<option value="Maine">Maine</option>
+								<option value="Maryland">Maryland</option>
+								<option value="Massachusetts">Massachusetts</option>
+								<option value="Michigan">Michigan</option>
+								<option value="Minnesota">Minnesota</option>
+								<option value="Mississippi">Mississippi</option>
+								<option value="Missouri">Missouri</option>
+								<option value="Montana">Montana</option>
+								<option value="Nebraska">Nebraska</option>
+								<option value="Nevada">Nevada</option>
+								<option value="New Hampshire">New Hampshire</option>
+								<option value="New Jersey">New Jersey</option>
+								<option value="New Mexico">New Mexico</option>
+								<option value="New York">New York</option>
+								<option value="North Carolina">North Carolina</option>
+								<option value="North Dakota">North Dakota</option>
+								<option value="Ohio">Ohio</option>
+								<option value="Oklahoma">Oklahoma</option>
+								<option value="Oregon">Oregon</option>
+								<option value="Pennsylvania">Pennsylvania</option>
+								<option value="Rhode Island">Rhode Island</option>
+								<option value="South Carolina">South Carolina</option>
+								<option value="South Dakota">South Dakota</option>
+								<option value="Tennessee">Tennessee</option>
+								<option value="Texas">Texas</option>
+								<option value="Utah">Utah</option>
+								<option value="Vermont">Vermont</option>
+								<option value="Virginia">Virginia</option>
+								<option value="Washington">Washington</option>
+								<option value="West Virginia">West Virginia</option>
+								<option value="Wisconsin">Wisconsin</option>
+								<option value="Wyoming">Wyoming</option>
 							</select>
 						</label>
 						<label>
@@ -72,11 +129,13 @@
 						</label>
 					</div>
 					</section>
-					<h2>Use the map below to set your own personal trail:</h2>
+					<h2>Click on the map below to open up a separate tab for Google Maps</h2>
+					<p>Once you've set up your trail/hike, copy the iframe url and paste that in the box below.</p>
 					<section class="map">
-						<iframe
-							src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d8342.69084188201!2d-71.03509335329524!3d42.33001468391614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x89e37aaf5d5ccadd%3A0x9b07f3674b05d5d4!2sSullivan&#39;s%20Castle%20Island!3m2!1d42.338821499999995!2d-71.0131356!4m5!1s0x89e37af70fcb4187%3A0x83b2824d8ecca92d!2sMetropolitan%20District%20Commission%20Rest%2C%20165%20HarborWalk%2C%20Boston%2C%20MA%2002125!3m2!1d42.323375899999995!2d-71.0461365!5e0!3m2!1sen!2sus!4v1623792123409!5m2!1sen!2sus"
-							style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+						<a href="https://www.google.com/maps/dir/" target="_blank"><img src="/public/images/googleMaps.PNG"></a>
+					</section>
+					<section class="trailLink">
+						<label><span>Google Maps iframe Link: </span><input type='text' placeholder='iframe Link' name='gMaps'></label>
 					</section>
 					<div class="description">
 						<h2><span>Description:</span></h2><textarea placeholder='Description' name='description'></textarea>
