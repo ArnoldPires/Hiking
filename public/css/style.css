@@ -141,18 +141,23 @@ title h2 {
   display: flex;
   flex-wrap: wrap;
 }
+.uploadedTrails li {
+  border: 5px solid #69a0411a;
+  border-radius: 20px;
+  margin: 5px;
+}
 .uploadedTrails img {
   width: 20rem;
   object-fit: fill;
   height: 12rem;
-  padding: 15px;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 .uploadedTrails p {
   text-align: center;
   margin: 0;
   font-size: 1rem;
   font-weight: bold;
+  padding: 1%;
 }
 .uploadedTrails a {
   color: #cc8231;
