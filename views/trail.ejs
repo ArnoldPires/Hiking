@@ -1,6 +1,6 @@
 <%- include('partials/header') -%>
-<div class='container'>
-  <div class="mainsectiontop">
+<section class='container'>
+  <section class="mainsectiontop">
         <article class="leftsection">
             <section id="submission">
                 <p class="name"><span>Hike/Trail Name: </span><%= trail.name %></p>
@@ -10,36 +10,36 @@
                     <a class="update" href="<%= `/trails/updateTrail/${trail.id}` %>">Update</a>
                     <button class='del update' data-id="<%= trail.id %>">Delete</button>
                     <% } %>
-            <section class="bigimage">                       
-                <img src="<%= trail.picture %>" alt="<%= trail.name %>">
-            </section>
-            </section>
-        </article>
-        <article class="rightsection">
-            <h2><span>Trail:</span></h2>
-            <section class="map">
-                <img src="<%= trail.gMaps %>"style="border:0;" allowfullscreen="" loading="lazy">
+                <section class="bigimage">                       
+                    <img src="<%= trail.picture %>" alt="<%= trail.name %>">
+                </section>
             </section>
         </article>
-  </div>
-  <section class="mainsectionbottom">
+          <section class="mainsectionbottom">
+                <section class="description">
+                    <h2><span>Description</span></h2>
+                    <p class=""><%= trail.description %></p>
+                </section>
        <h2><span>Information</span></h2>
        <section class="infoWrapper">
             <section>
                 <p class="attractions"><span>Attractions: </span><%= trail.attractions %></p>
-                <p class="length"><span>Length: </span><%= trail.length %></p>
+                <p class="length"><span>Miles: </span><%= trail.length %></p>
                 <p class="location"><span>Location: </span><%= trail.location %> </p>
             </section>
             <section>
                 <p class="suitability"><span>Suitability: </span><%= trail.suitability %></p>
                 <p class="routeType"><span>Route Type: </span><%= trail.routeType %> </p>
             </section>
+        </section>
+    </section>
+        <article class="rightsection">
+            <h2><span>Trail:</span></h2>
+            <section class="map">
+                <a><%= trail.gMaps %></a>
             </section>
-        </section>
-        <section class="description">
-            <h2><span>Description</span></h2>
-            <p class=""><%= trail.description %></p>
-        </section>
+        </article>
+    </section>
   </section>
-</div>
+</section>
 <%- include('partials/footer') -%>
