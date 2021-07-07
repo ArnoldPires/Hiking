@@ -16,10 +16,8 @@
 				<form class="submissionform" id="add-trail-form" action="/trails/createTrail" method="POST"
 					enctype="multipart/form-data">
 					<div class="form">
-						<label><span>Trail Name: </span><input type='text' placeholder='Enter a name'
-								name='name'></label>
-						<label><span>Length: </span><input type='text' placeholder='Enter Length of Trail'
-								name='length'></label>
+						<label><span>Trail Name: </span><input type='text' placeholder='Enter a name' name='name'></label>
+						<label><span>Miles: </span><input type='number' step='any' placeholder='Enter Length of Trail' name='length'></label>
 						<label><span>Difficultly: </span><select name="difficultly">
 								<option value="" disabled selected hidden>Select Difficultly:</option>
 								<option value="Easy">Easy</option>
@@ -129,13 +127,15 @@
 						</label>
 					</div>
 					</section>
-					<h2>Click on the map below to open up a separate tab for Google Maps</h2>
-					<p>Once you've set up your trail/hike, copy the iframe url and paste that in the box below.</p>
-					<section class="map">
-						<a href="https://www.google.com/maps/dir/" target="_blank"><img src="/public/images/googleMaps.PNG"></a>
-					</section>
-					<section class="trailLink">
-						<label><span>Google Maps iframe Link: </span><input type='text' placeholder='iframe Link' name='gMaps'></label>
+					<section class="gLink">
+						<h2>Click on the map below to open up a separate tab for Google Maps</h2>
+						<p>Once you've set up your trail/hike, copy the iframe url and paste that in the box below.</p>
+						<section class="map">
+							<a href="https://www.google.com/maps/dir/" target="_blank"><img src="/public/images/googleMaps.PNG"></a>
+						</section>
+						<section class="trailLink">
+							<label><span>Google Maps Link: </span><input type='text' placeholder='Paste Link Here' name='gMaps'></label>
+						</section>
 					</section>
 					<div class="description">
 						<h2><span>Description:</span></h2><textarea placeholder='Description' name='description'></textarea>

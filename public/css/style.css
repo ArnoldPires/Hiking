@@ -299,6 +299,10 @@ title h2 {
   width: 50rem;
   display: contents;
 }
+.description p {
+  width: 44rem;
+  text-align: center;
+}
 .description textarea {
 	width: 60rem;
 	min-height: 10rem;
@@ -318,6 +322,8 @@ title h2 {
 .submissionslist {
 	padding: 0;
 	display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 	gap: 4rem;
 }
 .submission {
@@ -335,12 +341,13 @@ title h2 {
 }
 .submissionname {
 	margin: 0;
-	color: black;
+	color: #cc8231;
 }
 .submissionbuttons {
 	margin-top: 1rem;
 	display: flex;
 	flex-direction: column;
+  align-items: center;
 }
 .submissionbutton, .update {
 	display: inline-block;
@@ -350,6 +357,7 @@ title h2 {
 	background: #cc8231;
 	margin: 0.5rem;
 	padding: 0.5em 1em;
+  width: 5rem;
 }
 /*HikingTrail.ejs*/
 .mainsectiontop {
@@ -369,12 +377,6 @@ title h2 {
 .infoWrapper {
   display: flex;
   justify-content: space-evenly;
-}
-.description {
-  text-align: center;
-  padding-bottom: 1rem;
-  margin: 0 auto;
-  width: 60rem;
 }
 #submission {
   align-self:left;

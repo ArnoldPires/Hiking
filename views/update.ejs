@@ -7,13 +7,13 @@
 		<form class="submissionform update-trail-form" action="/trails/createTrail" method="POST" enctype="multipart/form-data">
 			<div class="form">
 				<label><span>Hike/Trail Name: </span><input type='text' placeholder='Enter a name' name='name' value="<%= trail.name %>"></label>
-                <label><span>Difficultly: </span><select name="difficultly">
+				<label><span>Miles: </span><input type='number' step='any' name="length" value="<%= trail.length %>"></label>
+				<label><span>Difficultly: </span><select name="difficultly">
                     <option value="" disabled selected hidden>Select Difficultly:</option>
 					<option value="Easy" <%= trail.difficultly === 'Easy' && 'selected' %>>Easy</option>
 					<option value="Medium" <%= trail.difficultly === 'Medium' && 'selected' %>>Medium</option>
 					<option value="Hard" <%= trail.difficultly === 'Hard' && 'selected' %>>Hard</option>
 				</select></label>
-				<label><span>Length: </span><input type='text' name="length" value="<%= trail.length %>"></label>
                 <label><span>Attractions: </span><select name="attractions">
                     <option value="" disabled selected hidden>Select Attraction:</option>
 					<option value="Waterfall" <%= trail.attractions === 'Waterfall' && 'selected' %>>Waterfall</option>
