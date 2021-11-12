@@ -13,14 +13,14 @@ const UserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
-        min: 8,
+        min: 8
     },
 }, { timestamps: true })
 
 UserSchema.pre("save", function save(next) {
-    const user = this
+    const user = this;
     if (!user.isModified("password")) {
-        return next()
+        return next();
     }
     bcrypt.genSalt(10, (err, salt) => {
         if (err) {
@@ -41,7 +41,7 @@ UserSchema.methods.comparePassword = function comparePassword(
     cb
 ) {
     bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
-        cb(err, isMatch)
+        cb(err, isMatch);
     })
 }
 module.exports = mongoose.model('User', UserSchema)
