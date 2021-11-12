@@ -1,6 +1,6 @@
 const passport = require('passport')
 const validator = require('validator')
-const User = require('../../Hiking/models/User')
+import User from '../models/User';
 
 exports.getLogin = (req, res) => {
     if (req.user) {
