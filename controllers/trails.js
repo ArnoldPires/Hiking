@@ -1,5 +1,5 @@
 const Trail = require("../models/Trail");
-const User = require("../models/User");
+const User = require("../models/user");
 const cloudinary = require("../middleware/cloudinary");
 
 module.exports = {
