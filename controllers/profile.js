@@ -1,4 +1,4 @@
-const Trail = require("../models/Trail");
+const Trail = require("../models/trail");
 module.exports = {
   getIndex: async (req, res) => {
     try {
