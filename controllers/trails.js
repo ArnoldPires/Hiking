@@ -1,4 +1,4 @@
-const Trail = require("../models/Trail");
+const Trail = require("../models/trail");
 const User = require("../models/user");
 const cloudinary = require("../middleware/cloudinary");
 
