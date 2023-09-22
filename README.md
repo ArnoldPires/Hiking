@@ -1,3 +1,3 @@
 # Hiking
 Hiking API
-Site can be found here: https://hiking-api-heroku.herokuapp.com/
+Site can be found here: https://step-explorer.onrender.com/
